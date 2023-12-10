@@ -1,0 +1,24 @@
+[submodule "lib/forge-std"]
+	path = lib/forge-std
+	url = https://github.com/foundry-rs/forge-std
+	tag = v1.7.1
+[submodule "lib/solmate"]
+	path = lib/solmate
+	url = https://github.com/transmissions11/solmate
+[submodule "lib/erc4626-tests"]
+	path = lib/erc4626-tests
+	url = https://github.com/a16z/erc4626-tests
+[submodule "lib/openzeppelin-contracts-v5.0.0"]
+	path = lib/openzeppelin-contracts-v5.0.0
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+	tag = v5.0.0
+[submodule "lib/openzeppelin-contracts-v4.9.3"]
+	path = lib/openzeppelin-contracts-v4.9.3
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+	tag = v4.9.3
+[submodule "lib/openzeppelin-contracts"]
+	path = lib/openzeppelin-contracts
+	url = https://github.com/OpenZeppelin/openzeppelin-contracts
+[submodule "lib/crytic"]
+	path = lib/crytic
+	url = https://github.com/crytic/properties

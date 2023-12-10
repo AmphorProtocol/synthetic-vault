@@ -1,0 +1,41 @@
+name: smartContractTest
+
+on: [push, workflow_dispatch]
+
+env:
+  FOUNDRY_PROFILE: ci
+
+jobs:
+  check:
+    strategy:
+      fail-fast: true
+
+    name: Foundry project
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3.5.3
+        with:
+          submodules: recursive
+
+      - name: Set up env variables
+        run: |
+          cp -n example.env .env
+
+      - name: Install Foundry
+        uses: foundry-rs/foundry-toolchain@v1.0.10
+        with:
+          version: nightly
+
+      - name: Run Forge tests
+        env:
+          FOUNDRY_ETH_RPC_URL: ${{ secrets.RPC_URL_MAINNET }}
+        run: |
+          cp example.env .env
+          forge test
+        id: test
+
+      - name: Run Forge coverage
+        env:
+          FOUNDRY_ETH_RPC_URL: ${{ secrets.RPC_URL_MAINNET }}
+        run: |
+          forge coverage

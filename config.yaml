@@ -1,0 +1,64 @@
+# Learn how to configure DevNet templates using YAML here: https://docs.tenderly.co/devnets/yaml-template
+
+version: v0
+template:
+  name: zapper
+  block-number: latest
+  visibility: TEAM
+  network-id: 1
+  execution:
+    chain-config:
+      chain-id: 1
+    block-gas-limit: 10000000
+    base-fee-per-gas: 1000000000
+
+    #   contracts:
+    #     - address: 0x395eD9ffd32b255dBD128092ABa40200159d664b
+    #       bytecode: 0x123412341234123124123143
+    #       balance: 100
+    #       slots:
+    #         - 0x3459054d09ae8631455b798b2b5d106e17bb4e68a39d2d2a935f5f1b7253988c: 0x0000000000000000000000000000000000000000000000000000000000000000
+    #         - 0x3459054d09ae8631455b798b2b5d106e17bb4e68a39d2d2a935f5f1b7253988d: 0x0000000000000000000000000000000000000000000000000000000000000001
+    wallets:
+      - address: 0x86AE120DFf0967Fdb20ADa7629976A759A6FdEdf
+        balance: 100
+      - private-key: 0x3459054d09ae8631455b798b2b5d106e17bb4e68a39d2d2a935f5f1b7253988c
+        balance: 100
+    #   storage:
+    #     - address: 0x395eD9ffd32b255dBD128092ABa40200159d664b
+    #       slots:
+    #         - 0x1459054d09ae8631455b798b2b5d106e17bb4e68a39d2d2a935f5f1b7253988c: 0x0000000000000000000000000000000000000000000000000000000000000001
+    #         - 0x2459054d09ae8631455b798b2b5d106e17bb4e68a39d2d2a935f5f1b7253988c: 0x0000000000000000000000000000000000000000000000000000000000000002
+    #     - address: 0xabcde9ffd32b255dBD128092ABa40200159d665a
+    #       slots:
+    #         - 0x3459054d09ae8631455b798b2b5d106e17bb4e68a39d2d2a935f5f1b7253988c: 0x0000000000000000000000000000000000000000000000000000000000000003
+    #   balances:
+    #     - address: 0x395eD9ffd32b255dBD128092ABa40200159d664b
+    #       amount: 1000
+    #     - address: 0x395eD9ffd32b255dBD128092ABa40200159d664b
+    #       amount: 1000
+    erc20:
+      - contract: 0x6B175474E89094C44Da98b954EedeAC495271d0F # DAI
+        balances:
+          - address: 0x86AE120DFf0967Fdb20ADa7629976A759A6FdEdf
+            amount: 100
+      - contract: 0x2260FAC5E5542a773Aa44fBCfeDf7C193bc2C599 # WBTC
+        balances:
+          - address: 0x86AE120DFf0967Fdb20ADa7629976A759A6FdEdf
+            amount: 100
+      - contract: 0xC02aaA39b223FE8D0A0e5C4F27eAD9083C756Cc2 # weth
+        balances:
+          - address: 0x86AE120DFf0967Fdb20ADa7629976A759A6FdEdf
+            amount: 100
+      - contract: 0xdAC17F958D2ee523a2206206994597C13D831ec7 # USDT
+        balances:
+          - address: 0x86AE120DFf0967Fdb20ADa7629976A759A6FdEdf
+            amount: 100
+      - contract: 0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48 # USDC
+        balances:
+          - address: 0x86AE120DFf0967Fdb20ADa7629976A759A6FdEdf
+            amount: 100
+      - contract: 0xae7ab96520DE3A18E5e111B5EaAb095312D7fE84 # steth
+        balances:
+          - address: 0x86AE120DFf0967Fdb20ADa7629976A759A6FdEdf
+            amount: 100
